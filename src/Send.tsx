@@ -1,18 +1,18 @@
 import React from 'react';
-import Peer from 'peerjs';
 import { FileModel, BEGIN_MESSAGE } from './App';
 
+declare var Peer: any;
 interface SendState {
   linkClipMatch: boolean;
   connectionLink?: string;
   copySuccess: boolean;
-  connection?: Peer.DataConnection;
+  connection?: any;
   sending: boolean;
   sent: boolean;
 }
 
 class Send extends React.Component<{}, SendState> {
-  private readonly peer: Peer;
+  private readonly peer: any;
   private readonly input: HTMLInputElement;
   public constructor(props: {}) {
     super(props);
@@ -63,7 +63,7 @@ class Send extends React.Component<{}, SendState> {
         if (result.state === "granted" || result.state === "prompt") {
           navigator.clipboard.writeText(this.state.connectionLink as string).then(() => { 
             this.setState({ copySuccess: true })
-            this.peer.on("connection", (connection: Peer.DataConnection) => {
+            this.peer.on("connection", (connection: any) => {
               this.setState({connection});
             });
           });

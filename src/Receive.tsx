@@ -1,8 +1,9 @@
 import React from 'react';
-import Peer from 'peerjs';
 import { RouteComponentProps } from 'react-router-dom';
 import { FileModel, BEGIN_MESSAGE } from './App';
 import { saveAs } from 'file-saver';
+
+declare var Peer: any;
 
 interface ReceiveParams {
   senderId?: string;
@@ -19,7 +20,7 @@ interface ReceiveState {
 }
 
 class Receive extends React.Component<ReceiveProps, ReceiveState> {
-  private readonly peer: Peer;
+  private readonly peer: any;
   public constructor(props: ReceiveProps) {
     super(props);
 
