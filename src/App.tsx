@@ -20,7 +20,7 @@ export default function App() {
   return (
     <div className="App">
       <div className="App-header">
-        <img src={logo} className="App-logo" alt="Zippy" style={{marginBottom: -20}} />
+        <a href="/"><img src={logo} className="App-logo" alt="Zippy" style={{marginBottom: -20}} /></a>
         <h1 style={{fontSize: 22, bottom: "100%", paddingBottom: 100, fontStyle: "italic"}}>one-to-one, peer-to-peer, end-to-end encrypted file sharing</h1>
         <Router>
           <Switch>
