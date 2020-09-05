@@ -2,6 +2,7 @@ import React from 'react';
 import { FileModel, BEGIN_MESSAGE } from './App';
 
 declare var Peer: any;
+
 interface SendState {
   linkClipMatch: boolean;
   connectionLink?: string;
