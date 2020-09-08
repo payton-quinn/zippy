@@ -2,6 +2,8 @@ import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import { FileModel, BEGIN_MESSAGE } from './App';
 import { saveAs } from 'file-saver';
+import AppHeader from './AppHeader';
+import Footer from './Footer';
 
 declare var Peer: any;
 
@@ -61,6 +63,7 @@ class Receive extends React.Component<ReceiveProps, ReceiveState> {
   public render() {
     return (
       <>
+        <AppHeader />
         {!this.state.connected && <button type="button" className="bttn-float bttn-lg bttn-primary" onClick={() => this.connect()}>
           Connect to sender
         </button>}
@@ -73,6 +76,7 @@ class Receive extends React.Component<ReceiveProps, ReceiveState> {
         {this.state.connected && !this.state.downloading && this.state.ready && <button type="button" className="bttn-float bttn-lg bttn-success"  onClick={() => this.download()}>
           Click to download <i>{this.state.file?.name}</i>
         </button>}
+        <Footer />
       </>
     );
   }

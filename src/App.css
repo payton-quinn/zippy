@@ -7,6 +7,11 @@
   pointer-events: none;
 }
 
+.App-logo-small {
+  height: 15vmin;
+  pointer-events: none;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: pulse infinite 5s linear;
