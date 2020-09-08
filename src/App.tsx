@@ -20,7 +20,7 @@ export default function App() {
   return (
     <div className="App">
       <a className="github-fork-ribbon" href="https://adhoc.cool" data-ribbon="Our other app: Adhoc!" title="Our other app: Adhoc!">Our other app: Adhoc!</a>
-      <div className="App-header" style={{height: "100%"}}>
+      <div className="App-header" style={{height: "100%", position: "relative"}}>
         <Router>
           <Switch>
             <Route path="/id/:senderId" component={Receive}>
